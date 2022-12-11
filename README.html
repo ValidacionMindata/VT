@@ -1,0 +1,54 @@
+<html lang="es">
+	<h3>Entrar a <a href="http://localhost:8080/find">http://localhost:8080/find</a></h3>
+	<p>Se trata de un listado de cursos y su fecha de inicio donde los controles (filtros y paginado no funcionan).</p>
+	<p><b><u>Solo es necesario modificar las clases java correspondientes</u></b></p>
+	<p>
+		<h3>Objetivo</h3>
+		El objetivo es modificar la aplicación para que:
+		<ol>
+			<li>Devuelva el listado de cursos ordenado por fecha ascendente y luego por nombre
+				<table>
+					<tbody>
+						<tr>
+							<td>B</td>
+							<td>02/03/2019</td>
+						</tr>
+						<tr>
+							<td>C</td>
+							<td>02/03/2019</td>
+						</tr>
+						<tr>
+							<td>A</td>
+							<td>03/03/2019</td>
+						</tr>
+					<tbody>
+				</table>
+				
+				<i><p><b>TIP: el método java.util.List.sort se puede definir un Comparator (función de comparación entre dos elementos) que determina orden</b>
+						<pre>
+							List&lt;String&gt; list = Arrays.asList("C","A","B");
+							list.sort((e1,e2)->e1.compareTo(e2));
+							System.out.println(list); // [A, B, C]
+						</pre>
+					</p>
+					<p><b>El Comparator espera que se devuelva
+					<ul>
+						<li>1 si e1 &gt; e2</li>
+						<li>0 si e1 = e2</li>
+						<li>-1 si e1 &lt; e2</li>
+					</ul></b></p>
+				</i>
+			</li>
+			<li>Implementar la capacidad de filtrado 
+				<ol>
+					<li>Por nombre, sin distinguir mayúsculas y minúsculas</li>
+					<li>Por fecha desde, o sea todos los elementos con fecha de inicio mayor o igual</li>
+				</ol>
+				<i><p><b>TIP: la clase java.util.Date tiene un método compareTo</b></p></i>
+			</li>
+			<li>Implementar paginado de forma de traer solo 10 resultados por vez, dependiendo del número de página que se elija a través de los links al final del listado. Si el parámetro page no está definido, traer los 10 primeros
+				<i><p><b>TIP: el método java.util.List.sublist(from, to) puede usarse para devolver un subarray</b></p></i>
+			</li>
+		</ol>
+	</p> 
+</html>
